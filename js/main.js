@@ -17,7 +17,7 @@ $(document).ready(function() {
 
   var color = ['#6ed4c0', '#ffffff'];
 
-  var percentages = [20,30,40,50,60,70,80];
+  var percentages = [20,70,60,80,70,70,80];
   for (var i = 1; i <= 7; i++) {
     var child = document.getElementById('circles-' + i),
       percentage = percentages[i-1];
