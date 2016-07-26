@@ -1,9 +1,122 @@
-/*--
+--
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+/*animated scroll*/
+@-webkit-keyframes ani-mouse {
+  0% {
+  opacity: 1;
+  top: 29%;
+  }
+  15% {
+  opacity: 1;
+  top: 50%;
+  }
+  50% {
+  opacity: 0;
+  top: 50%;
+  }
+  100% {
+  opacity: 0;
+  top: 29%;
+  }
+}
+@-moz-keyframes ani-mouse {
+  0% {
+  opacity: 1;
+  top: 29%;
+  }
+  15% {
+  opacity: 1;
+  top: 50%;
+  }
+  50% {
+  opacity: 0;
+  top: 50%;
+  }
+  100% {
+  opacity: 0;
+  top: 29%;
+  }
+}
+@keyframes ani-mouse {
+  0% {
+  opacity: 1;
+  top: 29%;
+  }
+  15% {
+  opacity: 1;
+  top: 50%;
+  }
+  50% {
+  opacity: 0;
+  top: 50%;
+  }
+  100% {
+  opacity: 0;
+  top: 29%;
+  }
+}
+ .scroll-btn {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-top: -60px;
+
+}
+.scroll-btn > * {
+  display: inline-block;
+  line-height: 18px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #7f8c8d;
+  color: #ffffff;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+  color: #ffffff;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+.scroll-btn .mouse {
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 55px;
+  margin: 0 auto 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid white;
+  border-radius: 23px;
+}
+.scroll-btn .mouse > * {
+  position: absolute;
+  display: block;
+  top: 29%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: white;
+  border-radius: 50%;
+  -webkit-animation: ani-mouse 2.5s linear infinite;
+  -moz-animation: ani-mouse 2.5s linear infinite;
+  animation: ani-mouse 2.5s linear infinite;
+}
 body{
 	margin:0;
 	font-family: 'Raleway', sans-serif;
@@ -43,6 +156,12 @@ button#showRightPush img {
 .logo {
   float: left;
 }
+  #logo {
+    max-height: 40px;
+    margin-top: -10px;
+
+
+  }
 .top-nav{
 	float:right;
 	margin-top: 15px;
@@ -120,7 +239,7 @@ a.boxclose{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	text-align: center;
-	min-height:750px;
+	min-height: 100%;
 }
 .banner-info{
 width:65%;
@@ -252,6 +371,98 @@ background: url(../images/icons.png) no-repeat -499px -71px;
 background: url(../images/icons.png) no-repeat 0px -71px;
 }
 /*--//about--*/
+
+
+
+/*Social*/
+.social{
+/*padding:60px 0 25px 0;*/
+}
+.social h3{
+margin:0;
+color:#2b2b2b;
+font-size:36px;
+font-weight:500;
+letter-spacing: 18px;
+}
+.strip{
+  margin: 28px 0 0px 0;
+}
+.social p{
+margin:45px 0 0 0;
+color:#888b90;
+font-size:18px;
+font-family: 'Lato', sans-serif;
+line-height:1.8em;
+}
+.social ul{
+    margin-top: 70px;
+    padding-left: 15px;
+}
+.social ul li{
+list-style-type:none;
+display:inline-block;
+margin-right:25px;
+}
+.social ul li a.stack{
+    background: url(../images/63/stack-overflow.png);
+    width: 63px;
+    height: 63px;
+    display: block;
+}
+
+.social ul li a.twit{
+background: url(../images/63/twitter.png);
+width: 63px;
+height: 63px;
+display:block;
+}
+/*.social ul li a.twit:hover{
+background: url(../images/icons.png) no-repeat -99px -71px;
+}*/
+.social ul li a.in{
+    background: url(../images/63/linkedin.png);
+    width: 63px;
+    height: 63px;
+    display: block;
+}
+
+/*.social ul li a.in:hover{
+background: url(../images/icons.png) no-repeat -199px -71px;
+}*/
+.social ul li a.github{
+    background: url(../images/63/github.png);
+    width: 62px;
+    height: 62px;
+    display: block;
+}
+
+.social ul li a.drib:hover{
+/*background: url(../images/icons.png) no-repeat -299px -71px;*/
+}
+.social ul li a.angel{
+    background: url(../images/63/angellist.png);
+    width: 62px;
+    height: 62px;
+    display: block;
+}
+
+.social ul li a.goog:hover{
+/*background: url(../images/icons.png) no-repeat -399px -71px;*/
+}
+/*.social ul li a.pin{
+    background: url(../images/63/twitter.png);
+    width: 63px;
+    height: 63px;
+    display: block;
+}*/
+}
+.social ul li a.pin:hover{
+/*background: url(../images/icons.png) no-repeat -499px -71px;*/
+}
+.social ul li a.fb:hover{
+/*background: url(../images/icons.png) no-repeat 0px -71px;*/
+}
 /*--my skill--*/
 .my-skills{
 	background: #1abc9c;
@@ -1772,7 +1983,7 @@ border:none;
 	  min-height: 115px;
 	}
 	.banner {
-	  min-height: 659px;
+	  min-height: 100%;
 	}
 	.about-back {
 	  min-height: 92px;
@@ -1967,7 +2178,7 @@ border:none;
 	  padding: 12px 20px;
 	}  
 	.banner {
-	  min-height: 575px;
+	  min-height: 100%;
 	} 
 	.about h3 {
 	  font-size: 32px;
@@ -2303,11 +2514,12 @@ border:none;
 	  float: left;
 	  width: 14%;
 	}
+
 	.banner-info {
 	  margin: 80px auto 0 auto;
 	}
 	.banner {
-	  min-height: 467px;
+	  min-height: 100%;
 	}
 	.banner-right h1 {
 	  font-size: 28px;
@@ -2674,7 +2886,7 @@ border:none;
 	  margin: 60px auto 0 auto;
 	}
 	.banner {
-	  min-height: 393px;
+	  min-height: 100%;
 	}
 	.about-back {
 	  min-height: 39px;
@@ -2940,7 +3152,7 @@ border:none;
 	  margin: 10px 0 28px 0;
 	}
 	.banner {
-	  min-height: 352px;
+	  min-height: 100%;
 	}
 	.about h3 {
 	  letter-spacing: 11px;
@@ -3313,7 +3525,7 @@ border:none;
   margin: 38px auto 0 auto;
 }
 .banner {
-  min-height: 231px;
+  min-height: 100%;
 }
 .about-back {
   min-height: 19px;
@@ -3520,4 +3732,4 @@ a.callbacks_nav.callbacks1_nav.prev {
 }
 
 
-/*-- responsive media queries --*/
+/*-- responsive media queries --

@@ -1,4 +1,12 @@
-  var colors = [
+$(document).ready(function() {
+  
+
+  $('.nav').on('click','li',() => {
+    $('.navbar-toggle').click();
+  });
+ console.log('hi2');
+
+    var colors = [
     ['#6ed4c0', '#ffffff'],
     ['#6ed4c0', '#ffffff'],
     ['#6ed4c0', '#ffffff'],
@@ -24,3 +32,9 @@
       colors: color
     });
   }
+
+
+
+  
+
+});
