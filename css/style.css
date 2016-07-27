@@ -446,6 +446,12 @@ background: url(../images/icons.png) no-repeat -199px -71px;
     height: 62px;
     display: block;
 }
+.social ul li a.email{
+    background: url(../images/63/email.png);
+    width: 62px;
+    height: 62px;
+    display: block;
+}
 
 .social ul li a.goog:hover{
 /*background: url(../images/icons.png) no-repeat -399px -71px;*/
