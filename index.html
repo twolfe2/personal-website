@@ -3,6 +3,7 @@ Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
+s3 upload command: aws s3 sync ./ s3://www.thomaswolfe.me
 -->
 <!DOCTYPE html>
 <html>
@@ -28,10 +29,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!--fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/ffbd613272.js"></script>
     <!--//fonts-->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/scrolling-nav.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- for-mobile-apps -->
@@ -51,6 +53,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- //for-mobile-apps -->
     <!-- js -->
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/jquery.flip.min.js"></script>
     <!-- js -->
     <!-- start-smooth-scrolling -->
     <script type="text/javascript" src="js/move-top.js"></script>
@@ -143,16 +146,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
         <div class="banner-info">
             <div class="banner-left">
-                <img src="images/me.png" alt="" />
+                <img src="images/me.png" alt="headshot" />
             </div>
             <div class="banner-right">
                 <h1>Thomas Wolfe</h1>
                 <div class="border"></div>
-                <h2>Full Stack JavaScript Developer</h2>
-                <a href="https://docs.google.com/document/d/1A9zYmSOpGntwPevnOR7CACIZhAOwo5guyf3SN5S3wBU/export?format=pdf">
-     <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-   </a>
-                <a target="_blank" href="https://docs.google.com/document/d/1eNH1IFTGWtV6QI6TjNI-E3D9mjUvDGStA8VtPlTfIOQ/export?format=pdf">DOWNLOAD MY RESUME</a>
+                <h2>Customer Success Engineer</h2>
+                <!-- <a target="_blank" href="https://docs.google.com/document/d/1eNH1IFTGWtV6QI6TjNI-E3D9mjUvDGStA8VtPlTfIOQ/export?format=pdf">DOWNLOAD MY RESUME</a> -->
             </div>
             <div class="clearfix"></div>
             <div class="social text-center">
@@ -174,7 +174,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a target='_blank' class="angel" href="https://angel.co/thomas-wolfe-1"></a>
                         </li>
                         <li>
-                            <a target='_blank' class="email" href="mailto:&#109;&#101;&#064;&#116;&#104;&#111;&#109;&#097;&#115;&#119;&#111;&#108;&#102;&#101;&#046;&#109;&#101;"></a>
+                            <a class="email" href="mailto:&#109;&#101;&#064;&#116;&#104;&#111;&#109;&#097;&#115;&#119;&#111;&#108;&#102;&#101;&#046;&#109;&#101;"></a>
                         </li>
                     </ul>
                 </div>
@@ -183,7 +183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <div class="text-center">
         <span class="scroll-btn">
-    <a href="#">
+    <a href="#about" class="page-scroll">
         <span class="mouse">
             <span>
             </span>
@@ -197,9 +197,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container">
             <h3 class='text-center'>ABOUT ME</h3>
             <div class="strip text-center"><img src="images/about.png" alt=" " /></div>
-            <p>I'm Thomas, a recent University of Illinois at Urbana- Champaign (UIUC) graduate. While at UIUC I studied Statistics and during my Senior year I started taking CS classes. After my first CS class I got hooked on programming and instead of going back to school to finish up a CS degree I am attending a coding bootcamp in Silicon Valley (Coding House).
+            <p>I'm Thomas, a University of Illinois at Urbana-Champaign (UIUC) graduate. While at UIUC I studied Statistics and during my Senior year I started taking CS classes. After my first CS class I got hooked on programming and instead of going back to school to finish up a CS degree I attended a coding bootcamp in Silicon Valley.
             </p>
-            <p> When I'm not coding you will most likely find me doing one of the following: reading, working on my latest startup idea, playing with my dog, analyzing data, eating, running,practicing guitar, taking a walk outside, or re-watching episodes of The Office for about the 10th time.</p>
+            <p>When I'm not coding you will most likely find me doing one of the following: helping others with technology problems, reading, working on my latest startup idea, fishing, playing with my dog, analyzing data, eating, running, practicing guitar, taking a walk outside, or re-watching episodes of The Office for about the 10th time.</p>
         </div>
     </div>
     <!--//about-->
@@ -211,336 +211,233 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="strip text-center"><img src="images/skill.png" alt=" " /></div>
             <div class="skill-grids">
                 <div class="col-md-2 skills-grid text-center">
-                    <div class="circle" id="circles-1"></div>
+                    <a target="_blank" href="https://facebook.github.io/react/">
+                        <div class="circle" id="circles-1"></div>
+                    </a>
                     <p>React</p>
                 </div>
                 <div class="col-md-2 skills-grid text-center">
-                    <div class="circle" id="circles-2"></div>
+                    <a target="_blank" href="https://facebook.github.io/react/">
+                        <div class="circle" id="circles-2"></div>
+                    </a>
+                    <p>Redux</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center">
+                    <a target="_blank" href="https://facebook.github.io/react/">
+                        <div class="circle" id="circles-3"></div>
+                    </a>
                     <p>JavaScript</p>
                 </div>
                 <div class="col-md-2 skills-grid text-center">
-                    <div class="circle" id="circles-3"></div>
+                    <div class="circle" id="circles-4"></div>
                     <p>MongoDB</p>
                 </div>
                 <div class="col-md-2 skills-grid text-center">
-                    <div class="circle" id="circles-4"></div>
-                    <p>Html 5 / CSS 3</p>
-                </div>
-                <div class="col-md-2 skills-grid text-center">
                     <div class="circle" id="circles-5"></div>
-                    <p>Node.js</p>
+                    <p>Angular 1</p>
                 </div>
                 <div class="col-md-2 skills-grid text-center">
                     <div class="circle" id="circles-6"></div>
-                    <p>Angular 1</p>
+                    <p>Html 5</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center skillSplit">
+                    <div class="circle" id="circles-7"></div>
+                    <p>CSS 3</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center skillSplit">
+                    <div class="circle" id="circles-8"></div>
+                    <p>Node.js</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center skillSplit">
+                    <div class="circle" id="circles-9"></div>
+                    <p>Bootstrap</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center skillSplit">
+                    <div class="circle" id="circles-10"></div>
+                    <p>Express</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center skillSplit">
+                    <div class="circle" id="circles-11"></div>
+                    <p>Socket.io</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center skillSplit">
+                    <div class="circle" id="circles-12"></div>
+                    <p>MySQL</p>
                 </div>
                 <div class="clearfix"> </div>
-                <!--  <script type="text/javascript" src="js/circles.js"></script>
-                             <script>
-                                var colors = [
-                                        ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff']
-                                    ];
-                                for (var i = 1; i <= 7; i++) {
-                                    var child = document.getElementById('circles-' + i),
-                                        percentage = 30 + (i * 10);
-                                        
-                                    Circles.create({
-                                        id:         child.id,
-                                        percentage: percentage,
-                                        radius:     80,
-                                        width:      10,
-                                        // number:      percentage / 1,
-                                        // text:       '%',
-                                        colors:     colors[i - 1]
-                                    });
-                                }
-                        
-                </script> -->
+         
             </div>
         </div>
     </div>
-    <!--//my skill-->
-    <!-- <div class="my-skill-back"></div> -->
-    <!--education-->
-    <!-- <div class="education text-center">
-    <div class="container">
-        <div class="edu-info">
-            <h3>EDUCATION</h3>
-        </div>
-        <div class="strip text-center"><img src="images/edu.png" alt=" "/></div>
-        <div class="edu-grids">
-            <div class="col-md-4 edu-grid">
-                <p>2012 - 2013</p><span>Graduated</span>
-                <img src="images/arrow.png" alt=""/>
-                <div class="edu-border">
-                    <div class="edu-grid-master">
-                        <h3>MASTER DEGREE OF COMPUTER SCIENCE</h3>
-                        <h4>Oxford University</h4>
-                    </div>
-                    <div class="edu-grid-info">
-                        <h5>This is Photoshop's version Lorem Ipsum. 
-                        Well, the way they make shows is, they make one show.</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 edu-grid">
-                <p>2012 - 2013</p><span>Graduated</span>
-                <img src="images/arrow.png" alt=""/>
-                <div class="edu-border">
-                    <div class="edu-grid-master">
-                        <h3>MASTER DEGREE OF COMPUTER SCIENCE</h3>
-                        <h4>Oxford University</h4>
-                    </div>
-                    <div class="edu-grid-info">
-                        <h5>This is Photoshop's version Lorem Ipsum. 
-                        Well, the way they make shows is, they make one show.</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 edu-grid">
-                <p>2012 - 2013</p><span>Graduated</span>
-                <img src="images/arrow.png" alt=""/>
-                <div class="edu-border">
-                    <div class="edu-grid-master">
-                        <h3>MASTER DEGREE OF COMPUTER SCIENCE</h3>
-                        <h4>Oxford University</h4>
-                    </div>
-                    <div class="edu-grid-info">
-                        <h5>This is Photoshop's version Lorem Ipsum. 
-                        Well, the way they make shows is, they make one show.</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    
-</div> -->
-    <!--//education-->
-    <!-- <div class="strip-border"><p></p></div> -->
-    <!--work-->
-    <!-- <div class="work-experience text-center">
-    
-    <div class="container">
-        <div class="work-info">
-            <h3>WORK EXPERIENCE</h3>
-        </div>
-        <div class="strip text-center"><img src="images/work.png" alt=" "/></div>
-        <div class="work-grids">
-            <div class="col-md-4 w-grid">
-                <div class="work-grid">
-                    <h3>2013 - Now</h3>
-                    <div class="work-grid-info">
-                        <h4>Google</h4>
-                        <h5>Visual Designer</h5>
-                        <p>Now that there is the Tec-9, a crappy spray gun from South Miami. 
-                        This gun is advertised as the most popular gun in American crime. 
-                        Do you believe that shit? It actually says that in the little book 
-                        that comes with it: the most popular gun in</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 w-grid">
-                <div class="work-grid">
-                    <h3>2013 - Now</h3>
-                    <div class="work-grid-info">
-                        <h4>Google</h4>
-                        <h5>Visual Designer</h5>
-                        <p>Now that there is the Tec-9, a crappy spray gun from South Miami. 
-                        This gun is advertised as the most popular gun in American crime. 
-                        Do you believe that shit? It actually says that in the little book 
-                        that comes with it: the most popular gun in</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 w-grid">
-                <div class="work-grid">
-                    <h3>2013 - Now</h3>
-                    <div class="work-grid-info">
-                        <h4>Google</h4>
-                        <h5>Visual Designer</h5>
-                        <p>Now that there is the Tec-9, a crappy spray gun from South Miami. 
-                        This gun is advertised as the most popular gun in American crime. 
-                        Do you believe that shit? It actually says that in the little book 
-                        that comes with it: the most popular gun in</p>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div> -->
+  
     <!--//work-->
     <div class="services-back"></div>
     <!--services-->
-    <!-- <div class="services text-center" id="services">
-    <div class="container">
-        <div class="ser-info">
-            <h3>SERVICES</h3>
-        </div>
-        <div class="strip text-center"><img src="images/ser.png" alt=" "/></div>
-        <div class="ser-grids">
-            <div class="col-md-3 ser-grid">
-                <div class="ser-imagea"></div>
-                <h3>Web Design</h3>
-                <p>I'm gonna shoot you in the head
-                then and there. Then I'm gonna shoot 
-                that bitch in the kneecaps.</p>
-            </div>
-            <div class="col-md-3 ser-grid">
-                <div class="ser-imageb"></div>
-                <h3>Graphic Design</h3>
-                <p>I'm gonna shoot you in the head
-                then and there. Then I'm gonna shoot 
-                that bitch in the kneecaps.</p>
-            </div>
-            <div class="col-md-3 ser-grid">
-                <div class="ser-imagec"></div>
-                <h3>Content Writer</h3>
-                <p>I'm gonna shoot you in the head
-                then and there. Then I'm gonna shoot 
-                that bitch in the kneecaps.</p>
-            </div>
-            <div class="col-md-3 ser-grid">
-                <div class="ser-imaged"></div>
-                <h3>Development</h3>
-                <p>I'm gonna shoot you in the head
-                then and there. Then I'm gonna shoot 
-                that bitch in the kneecaps.</p>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div> -->
-    <!--//services-->
+ 
     <!--portfolio-->
+    <!-- Images need to be 1080 x 756 -->
     <div class="gallery-section text-center" id="portfolio">
         <div class="container">
-            <h3>PORTFOLIO</h3>
-            <div class="strip text-center"><img src="images/port.png" alt=" " /></div>
-            <!-- <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.</p>
-            <div class="gallery-grids">
-                <div class="top-gallery">
-                    <div class="col-md-4 gallery-grid gallery1">
-                        <a href="images/p1.jpg" class="swipebox"><img src="images/p1.jpg" class="img-responsive" alt="/">
-                            <div class="textbox">
-                                <h4>Project Name</h4>
-                                <p>WEB DESIGN</p>
-                                <div class="button"><a href="images/p1.jpg" class="swipebox">VIEW</a></div>
+            <h3 id='portfolioHeading'>PORTFOLIO</h3>
+            <div class="strip text-center"><img src="images/work.png" alt=" " /></div>
+            <p id='portSub'>Click projects to see more info.</p>
+             <div class="col-md-4 col-md-offset-1">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="./images/grooveMarketingSite.png" width="100%" alt="" class="img-responsive">
+                            <div class="text-center front-text">
+                                <h3>Groove</h3><br>
+                                <h4>Marketing website</h4><br>
+                                <!-- <i class="pointer fa fa-chevron-right" aria-hidden="true"></i> -->
                             </div>
-                    </div>
-                    </a>
-                    <div class="col-md-4 gallery-grid gallery1">
-                        <a href="images/p2.jpg" class="swipebox"><img src="images/p2.jpg" class="img-responsive" alt="/">
-                            <div class="textbox">
-                                <h4>Project Name</h4>
-                                <p>WEB DESIGN</p>
-                                <div class="button"><a href="images/p2.jpg" class="swipebox">VIEW</a></div>
+                        </div>
+                        <div class="back text-center">
+                            <div class="back-text text-center">
+                                <div class="back-body">
+                                    <h3 class="title">Groove</h3>
+                                    <p>Marketing website</p>
+                                    <p class="summary">Dev Stack:</p>
+                                    <p>Middleman(Ruby) | Webpack | Bootstrap | HTML5 | CSS3</p>
+                                    <p class="summary">Marketing Stack:</p>
+                                    <p>Google Tag Manager | Adwords | FBAds | Google Analytics | Optimizley</p>
+                                </div>
+                                <div class="back-bottom">
+                                    <a target="_blank" href="http://groove.co"><button class="btn btn-primary">Visit Site</button></a>
+                                    <!-- <i class="pointer fa fa-chevron-left" aria-hidden="true"></i> -->
+                                </div>
                             </div>
+                        </div>
                     </div>
-                    </a>
-                    <div class="col-md-4 gallery-grid gallery1">
-                        <a href="images/p3.jpg" class="swipebox"><img src="images/p3.jpg" class="img-responsive" alt="/">
-                            <div class="textbox">
-                                <h4>Project Name</h4>
-                                <p>WEB DESIGN</p>
-                                <div class="button"><a href="images/p3.jpg" class="swipebox">VIEW</a></div>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-md-4 gallery-grid gallery1">
-                        <a href="images/p4.jpg" class="swipebox"><img src="images/p4.jpg" class="img-responsive" alt="/">
-                            <div class="textbox">
-                                <h4>Project Name</h4>
-                                <p>WEB DESIGN</p>
-                                <div class="button"><a href="images/p4.jpg" class="swipebox">VIEW</a></div>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-md-4 gallery-grid gallery1">
-                        <a href="images/p5.jpg" class="swipebox"><img src="images/p5.jpg" class="img-responsive" alt="/">
-                            <div class="textbox">
-                                <h4>Project Name</h4>
-                                <p>WEB DESIGN</p>
-                                <div class="button"><a href="images/p5.jpg" class="swipebox">VIEW</a></div>
-                            </div>
-                    </div>
-                    </a>
-                    <div class="col-md-4 gallery-grid gallery1">
-                        <a href="images/p6.jpg" class="swipebox"><img src="images/p6.jpg" class="img-responsive" alt="/">
-                            <div class="textbox">
-                                <h4>Project Name</h4>
-                                <p>WEB DESIGN</p>
-                                <div class="button"><a href="images/p6.jpg" class="swipebox">VIEW</a></div>
-                            </div>
-                    </div>
-                    </a> -->
-                    <div class="clearfix"> </div>
                 </div>
-                <link rel="stylesheet" href="css/swipebox.css">
-                <script src="js/jquery.swipebox.min.js"></script>
-                <script type="text/javascript">
-                jQuery(function($) {
-                    $(".swipebox").swipebox();
-                });
-                </script>
+            </div>
+                <div class="col-md-4 col-md-offset-2">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="./images/restaurantIQ.png" width="100%" alt="" class="img-responsive">
+                            <div class="text-center front-text">
+                                <h3>RestaurantIQ</h3><br>
+                                <h4>Full Stack React and Redux App</h4><br>
+                                <!-- <i class="pointer fa fa-chevron-right" aria-hidden="true"></i> -->
+                            </div>
+                        </div>
+                        <div class="back text-center">
+                            <div class="back-text text-center">
+                                <div class="back-body">
+                                    <h3 class="title">RestaurantIQ</h3>
+                                    <p >One search, endless restaurant intel.</p>
+                                    <p class="summary">Built using:</p>
+                                    <p>React | Redux | Material Design | Express | Webpack | Airbnb style guide</p>
+                                </div>
+                                <div class="back-bottom">
+                                    <a target="_blank" href="https://periodic-shock.surge.sh/"><button class="btn btn-primary">Visit Site</button></a>
+                                    <!-- <i class="pointer fa fa-chevron-left" aria-hidden="true"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4 col-md-offset-1 bottom-card">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="./images/fixourcity.png" width="100%" alt="" class="img-responsive">
+                            <div class="text-center front-text">
+                                <h3>Fix Our City</h3><br>
+                                <h4>Crowd-sourced City Maintenance</h4><br>
+                                <!-- <i class="pointer fa fa-chevron-right" aria-hidden="true"></i> -->
+                            </div>
+                        </div>
+                        <div class="back text-center">
+                            <div class="back-text text-center">
+                                <div class="back-body">
+                                    <h3 class="title">Fix Our City</h3>
+                                    <p>Crowd-sourced City Maintenance</p>
+                                    <p class="summary">Built using:</p>
+                                    <p>React | Redux | Material Design | Express | MongoDB | Google Maps | Airbnb style guide</p>
+                                </div>
+                                <div class="back-bottom">
+                                    <a target="_blank" href="https://fixour.city"><button class="btn btn-primary">Visit Site</button></a>
+                                    <!-- <i class="pointer fa fa-chevron-left" aria-hidden="true"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-md-offset-2 bottom-card">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="./images/xchangeit.png" width="100%" alt="">
+                            <div class="text-center front-text">
+                                <h3>XchangeIt</h3><br>
+                                <h4>Peer to Peer Currency Exchange App</h4><br>
+                                <!-- <i class="pointer fa fa-chevron-right" aria-hidden="true"></i> -->
+                            </div>
+                        </div>
+                        <div class="back text-center">
+                            <div class="back-text text-center">
+                                <div class="back-body">
+                                    <h3 class="title">XchangeIt</h3>
+                                    <p>Peer to Peer Currency Exchange App</p>
+                                    <p class="summary">Full-stack application build using:</p>
+                                    <p>Angular 1 | Express | Node.js | MySql</p>
+                                </div>
+                                <div class="back-bottom">
+                                    <a target="_blank" href="https://xchangeit.herokuapp.com/#/"><button class="btn btn-primary">Visit Site</button></a>
+                                    <!-- <i class="pointer fa fa-chevron-left" aria-hidden="true"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-4">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="./images/xchangeit.png" width="100%" alt="">
+                            <div class="text-center front-text">
+                                <h3>XchangeIt</h3><br>
+                                <h4>Peer to Peer Currency Exchnage App</h4><br> -->
+                                <!-- <i class="pointer fa fa-chevron-right" aria-hidden="true"></i> -->
+<!--                             </div>
+                        </div>
+                        <div class="back text-center">
+                            <div class="back-text text-center">
+                                <div class="back-body">
+                                    <h3 class="title">XchangeIt</h3>
+                                    <p >Full-stack Travel App</p>
+                                    <p class="summary"></p>
+                                </div>
+                                <div class="back-bottom">
+                                    <h4><a target="_blank" href="http://wanderlist-travel.herokuapp.com/#/list">Visit Site</a></h4> -->
+                                    <!-- <i class="pointer fa fa-chevron-left" aria-hidden="true"></i> -->
+                    <!--             </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
+        
+        <div class="clearfix"> </div>
+    </div>
+    <link rel="stylesheet" href="css/swipebox.css">
+    <script src="js/jquery.swipebox.min.js"></script>
+    <script type="text/javascript">
+    jQuery(function($) {
+        $(".swipebox").swipebox();
+    });
+    </script>
+    </div>
+    </div>
     </div>
     <!--//portfolio-->
-    <!--process-->
-    <!-- <div class="process text-center">
-    <div class="container">
-        <h3>PROCESS</h3>
-        <div class="strip text-center"><img src="images/pro.png" alt=" "/></div>
-        <div class="process-girds">
-            <div class="col-md-2 process-pad">
-                <div class="process-gird">
-                    <div class="process-imagea"></div>
-                    <p>IDEA</p>
-                    <img src="images/6.png" alt=""/>
-                </div>
-            </div>
-            <div class="col-md-2 process-pad">
-                <div class="process-gird">
-                    <div class="process-imageb"></div>
-                    <p>CONCEPT</p>
-                    <img class="pro-imga" src="images/6.png" alt=""/>
-                </div>
-            </div>
-            <div class="col-md-2 process-pad">
-                <div class="process-gird">
-                    <div class="process-imagec"></div>
-                    <p>DESIGN</p>
-                    <img class="pro-img" src="images/6.png" alt=""/>
-                </div>
-            </div>
-            <div class="col-md-2 process-pad">
-                <div class="process-gird">
-                    <div class="process-imaged"></div>
-                    <p>DEVELOP</p>
-                    <img class="pro-imgb" src="images/6.png" alt=""/>
-                </div>
-            </div>
-            <div class="col-md-2 process-pad">
-                <div class="process-gird">
-                    <div class="process-imagee"></div>
-                    <p>TEST</p>
-                    <img src="images/6.png" alt=""/>
-                </div>
-            </div>
-            <div class="col-md-2 process-pad">
-                <div class="process-gird">
-                    <div class="process-imagef"></div>
-                    <p>LAUNCH</p>
-                    
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div> -->
-    <!--//process-->
+    
     <div class="process-back"></div>
     <!--testimonials-->
     <!--testimonials-->
@@ -560,193 +457,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <script async src="https://static.medium.com/embed.js"></script>
                     </div>
                 </div>
-                <!-- <a class="m-story" data-collapsed="true" href="https://medium.com/@patrickshaughnessy/your-first-flux-flow-demystified-b7acdcb655a5#.mmvw5mv0h">Your First Flux Flow</a> -->
-                <!-- <div class="strip text-center"><img src="images/blog.png" alt=" "/></div>
-
-        </div>
-        <div class="blog-grids">
-            <div class="col-md-4 blog-text-info">
-                <div class="blog-grid">
-                    <a href="single.html"><img src="images/a.jpg" alt=""/></a>
-                    <div class="blog-text">
-                        <a href="single.html">Nature is lethal but it doesn't hold a candle to man.</a>
-                        <div class="stripa"></div>
-                        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria 
-                        and viruses differently than mine. You don't get sick, I do.</p>
-                    </div>
-                
-                    <div class="blog-para">
-                            <ul>
-                                <li><a href="#">3 Comments</a></li>
-                                <li><a href="#">8 Share</a></li>
-                            </ul>
-                    </div>  
-                    <div class="blog-pos">
-                        <p>5<span>May</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 blog-text-info">
-                <div class="blog-grid">
-                    <a href="single.html"><img src="images/b.jpg" alt=""/></a>
-                    <div class="blog-text">
-                        <a href="single.html">Nature is lethal but it doesn't hold a candle to man.</a>
-                        <div class="stripa"></div>
-                        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria 
-                        and viruses differently than mine. You don't get sick, I do.</p>
-                    </div>
-                
-                    <div class="blog-para">
-                            <ul>
-                                <li><a href="#">3 Comments</a></li>
-                                <li><a href="#">8 Share</a></li>
-                            </ul>
-                    </div>
-                    <div class="blog-pos">
-                        <p>5<span>May</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 blog-text-info">
-                <div class="blog-grid">
-                    <a href="single.html"><img src="images/c.jpg" alt=""/></a>
-                    <div class="blog-text">
-                        <a href="single.html">Nature is lethal but it doesn't hold a candle to man.</a>
-                        <div class="stripa"></div>
-                        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria 
-                        and viruses differently than mine. You don't get sick, I do.</p>
-                    </div>
-                
-                    <div class="blog-para">
-                            <ul>
-                                <li><a href="#">3 Comments</a></li>
-                                <li><a href="#">8 Share</a></li>
-                            </ul>
-                    </div>
-                    <div class="blog-pos">
-                        <p>5<span>May</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 blog-text-info">
-                <div class="blog-grid">
-                    <a href="single.html"><img src="images/a.jpg" alt=""/></a>
-                    <div class="blog-text">
-                        <a href="single.html">Nature is lethal but it doesn't hold a candle to man.</a>
-                        <div class="stripa"></div>
-                        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria 
-                        and viruses differently than mine. You don't get sick, I do.</p>
-                    </div>
-                
-                    <div class="blog-para">
-                            <ul>
-                                <li><a href="#">3 Comments</a></li>
-                                <li><a href="#">8 Share</a></li>
-                            </ul>
-                    </div>
-                    <div class="blog-pos">
-                        <p>5<span>May</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 blog-text-info">
-                <div class="blog-grid">
-                    <a href="single.html"><img src="images/b.jpg" alt=""/></a>
-                    <div class="blog-text">
-                        <a href="single.html">Nature is lethal but it doesn't hold a candle to man.</a>
-                        <div class="stripa"></div>
-                        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria 
-                        and viruses differently than mine. You don't get sick, I do.</p>
-                    </div>
-                
-                    <div class="blog-para">
-                            <ul>
-                                <li><a href="#">3 Comments</a></li>
-                                <li><a href="#">8 Share</a></li>
-                            </ul>
-                    </div>
-                    <div class="blog-pos">
-                        <p>5<span>May</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 blog-text-info">
-                <div class="blog-grid">
-                    <a href="single.html"><img src="images/c.jpg" alt=""/></a>
-                    <div class="blog-text">
-                        <a href="single.html">Nature is lethal but it doesn't hold a candle to man.</a>
-                        <div class="stripa"></div>
-                        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria 
-                        and viruses differently than mine. You don't get sick, I do.</p>
-                    </div>
-                
-                    <div class="blog-para">
-                            <ul>
-                                <li><a href="#">3 Comments</a></li>
-                                <li><a href="#">8 Share</a></li>
-                            </ul>
-                    </div>
-                    <div class="blog-pos">
-                        <p>5<span>May</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div> -->
+              
             </div>
         </div>
     </div>
     <!--//blog-->
     <div class="contact-back"></div>
     <!--contact-->
-    <!-- <div class="contact" id="contact">
-        <div class="container">
-            <div class="contact-info text-center">
-                <h3>CONTACT</h3>
-                <div class="strip text-center"><img src="images/con1.png" alt=" " /></div>
-            </div>
-            <div class="contact-grids">
-                <div class="col-md-5 contact-left">
-                    <h3>Say Hi to Me</h3>
-                    <div class="stripb"></div>
-                    <ul>
-                        <li>Orchard Park, Long Bennington, </li>
-                        <li>Newark, Lincolnshire </li>
-                        <li>NG23 5DQ, United Kingdom</li>
-                        <li>9876543210</li>
-                        <li><a href="mailto:info@example.com">Sebastian@mail.com</a></li>
-                        <li><a href="#">www.sebasti.an</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-7 contact-right">
-                    <h3>Drop Me A Line</h3>
-                    <div class="stripb"></div>
-                    <form>
-                        <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                        <input type="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
-                        <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required="">Message</textarea>
-                        <input type="submit" value="SEND">
-                    </form>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div> -->
+
     <!--//contact-->
     <div class="footer-top"></div>
     <!--resume-->
-    <div class="resume text-center">
+   <!--  <div class="resume text-center">
         <div class="container">
             <div class="strip text-center">
                 <a href="#"><img src="images/down.png" alt=" " /></a>
             </div>
             <div class="down"><a target="_blank" href="https://docs.google.com/document/d/1eNH1IFTGWtV6QI6TjNI-E3D9mjUvDGStA8VtPlTfIOQ/export?format=pdf">Download My Resume</a></div>
         </div>
-    </div>
+    </div> -->
     <!--//resume-->
     <!--footer-->
     <div class="footer">
         <div class="container">
-            <p>&copy; Thomas Wolfe 2016
+            <p>&copy; Thomas Wolfe 2017
         </div>
     </div>
     <!--//footer-->
