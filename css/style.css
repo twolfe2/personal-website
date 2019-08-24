@@ -526,6 +526,13 @@ background: url(../images/icons.png) no-repeat -199px -71px;
     display: block;
 }
 
+.social ul li a.medium {
+    background: url(../images/63/medium.png);
+    width: 62px;
+    height: 62px;
+    display: block;
+}
+
 .social ul li a.drib:hover {
     /*background: url(../images/icons.png) no-repeat -299px -71px;*/
 }
